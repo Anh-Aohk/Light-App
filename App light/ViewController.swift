@@ -9,11 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var brightnessSlider: UISlider!
+    
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let newBrightness = CGFloat(sender.value)
+        self.view.backgroundColor = UIColor(white: 1.0, alpha: newBrightness)
     }
-
-
 }
 
